@@ -19,5 +19,5 @@ then
     cat $AUTHORIZED_KEYS_FILE >> ~/.ssh/authorized_keys
 fi
 sleep 10
-ssh -o "AllowTCPForwarding=yes" -o "PermitOpen=any" -o "NoHostAuthenticationForLocalhost=yes" -o "ConnectTimeout=30" -o "ControlMaster=auto" -o "ControlPersist=no" -o "ControlPath=~/.ssh/control/ssh-%r@%h:%p" -CfN -D 0.0.0.0:2222 localhost &
+ssh -o "NoHostAuthenticationForLocalhost=yes" -o "ConnectTimeout=30" -o "ControlMaster=auto" -o "ControlPersist=no" -o "ControlPath=~/.ssh/control/ssh-%r@%h:%p" -CfN -D 0.0.0.0:2222 localhost &
 exec /usr/sbin/sshd -D -e "$@"
