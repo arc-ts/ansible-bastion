@@ -2,7 +2,6 @@
 mkdir -p ~/.ssh/control
 cat /dev/zero | ssh-keygen -t rsa -b 4096 -q -N ""
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-HOST_KEYS=$(ls -1 /etc/ssh/ssh_host_\*)
 if [ -e "$HOST_KEYS_DIR" ] && [ -d "$HOST_KEYS_DIR" ]
 then
     echo Copy host keys from $HOST_KEYS_DIR
