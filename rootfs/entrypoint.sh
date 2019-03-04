@@ -13,7 +13,7 @@ then
     echo Adding keys from env
     echo $AUTHORIZED_KEYS >> ~/.ssh/authorized_keys
 fi
-if [ -e "$AUTHORIZED_KEYS_FILE" ] && [ -f "$AUTHORIZED_KEYS_FILE"]
+if [ -e "$AUTHORIZED_KEYS_FILE" ] && [ -f "$AUTHORIZED_KEYS_FILE" ]
 then
     echo Adding keys from file $AUTHORIZED_KEYS_FILE
     cat $AUTHORIZED_KEYS_FILE >> ~/.ssh/authorized_keys
